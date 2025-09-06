@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "showparquet"
+version = "0.1.0"
+authors = [
+  { name="Your Name", email="you@example.com" },
+]
+description = "A simple command-line tool to display the schema of a Parquet file."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "pyarrow>=10.0.0",
+    "tabulate>=0.9.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/example/showparquet"
+"Bug Tracker" = "https://github.com/example/showparquet/issues"
+
+[project.scripts]
+showparquet = "showparquet.cli:main"
