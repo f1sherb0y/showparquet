@@ -28,7 +28,7 @@ def show_schema(file_path):
             return
 
         # Use the tabulate library to create a nicely formatted grid table.
-        print(tabulate(table_data, headers=headers, tablefmt="grid"))
+        print(tabulate(table_data, headers=headers, tablefmt="plain"))
 
     except FileNotFoundError:
         print(f"Error: The file '{file_path}' was not found.", file=sys.stderr)
