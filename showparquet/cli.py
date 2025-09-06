@@ -17,17 +17,11 @@ def show_schema(file_path):
         # This avoids loading the entire dataset into memory.
         schema = pq.read_schema(file_path)
 
-        headers = ["idx", "name", "physical type", "logical type"]
+        headers = ["idx", "name", "type"]
         table_data = []
 
         for i, field in enumerate(schema):
-            # The logical_type can sometimes be None, so we handle it gracefully.
-            # `str(field.logical_type)` will produce 'NONE' for NoneType.
-            logical_type_str = str(field.converted_type)
-
-            table_data.append(
-                [i, field.name, str(field.physical_type), logical_type_str]
-            )
+            table_data.append([i, field.name, str(field.type)])
 
         if not table_data:
             print(f"No columns found in the schema of '{file_path}'.")
